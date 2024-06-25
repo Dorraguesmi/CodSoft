@@ -1,0 +1,61 @@
+{% extends 'blog/home.html' %} {% load static %} {% block content %}
+<main>
+  <style>
+    /* CSS styles */
+    .delete-confirmation {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      margin-left: 170px;
+      margin-top: 20px;
+    }
+
+    .delete-title {
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 1.2em;
+    }
+
+    .delete-btn,
+    .cancel-btn {
+      background-color: #dc3545;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      margin-right: 10px;
+      text-decoration: none;
+    }
+
+    .cancel-btn {
+      background-color: #5c7aea;
+    }
+
+    .cancel-btn:hover,
+    .delete-btn:hover {
+      text-decoration: none;
+    }
+  </style>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="delete-confirmation">
+          <h2 class="delete-title">
+            Are you sure you want to delete "{{ object.title }}"?
+          </h2>
+          <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="delete-btn">Confirm</button>
+            <a href="{% url 'home' %}" class="cancel-btn">Cancel</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -19,13 +19,14 @@
     {% block styles %}
     <style>
       .navbar-custom {
-        background-color: #f6f5f5;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
-      @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
       body {
-        font-family: "Poppins", sans-serif;
-        background: #fafafa;
+        font-family: "Nunito", sans-serif;
+        background: #f9f9f9;
       }
 
       .wrapper {
@@ -36,19 +37,18 @@
       }
 
       #sidebar {
-        min-width: 250px;
-        max-width: 250px;
-        min-height: 630px;
-        max-height: 630px;
-        background: #03002e;
-        color: #fff;
+        min-width: 200px;
+        max-width: 200px;
+        min-height: 100vh;
+        background: #6962ad;
+        color: #ffffff;
         transition: all 0.3s;
         position: fixed;
-        z-index: 1; 
+        z-index: 1;
       }
 
       #sidebar.active {
-        margin-left: -250px;
+        margin-left: -200px;
       }
 
       #sidebar ul.components {
@@ -57,119 +57,161 @@
 
       #sidebar ul li a {
         padding: 10px;
-        font-size: 1.1em;
+        font-size: 1em;
         display: block;
-        color: #f6f5f5;
+        color: #ffffff;
       }
 
       #sidebar ul li a:hover {
-        color: #7386d5;
-        background: #fff;
+        color: #2e3a46;
+        background: #ffffff;
+        border-radius: 5px;
       }
 
       #sidebar ul li.active > a,
       a[aria-expanded="true"] {
-        color: #fff;
-        background: #6d7fcc;
-      }
-
-      a.article,
-      a.article:hover {
-        background: #6d7fcc !important;
-        color: #fff !important;
-      }
-
-      @media (max-width: 768px) {
-        #sidebar {
-          margin-left: -250px;
-        }
-        #sidebar.active {
-          margin-left: 0;
-        }
+        color: #ffffff;
+        background: #4d5b69;
       }
 
       .card {
         background: #ffffff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         width: 100%;
-        max-width: 350px;
-        max-height: 350px;
-        width:100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+        transition: transform 0.3s;
       }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
       .card img {
         width: 100%;
         height: 150px;
         object-fit: cover;
       }
+
       .card-content {
-        padding: 10px;
+        padding: 15px;
       }
+
+      .card-content h3 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+      }
+
+      .card-content h4 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        color: #666;
+      }
+
+      .card-content h6 {
+        font-size: 0.9em;
+        margin-bottom: 5px;
+        color: #999;
+      }
+
       .card-actions {
         padding: 10px;
         text-align: right;
-        border-top: 1px solid #eee;
+        border-top: 1px solid #e0e0e0;
       }
+
       .card-actions a {
-        margin-left: 10px;
+        margin-left: 5px;
+        font-size: 0.9em;
+        color: #4942e4; /* Change default color */
+        transition: color 0.3s;
       }
+
+      .card-actions a:hover {
+        color: #0056b3; /* Change hover color */
+      }
+
+      .container > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .container > div > .card {
+        flex: 0 0 calc(33.333% - 10px);
+        margin-right: 10px;
+      }
+
       .posts {
         margin-top: 20px;
-        margin-left: 350px;
+        margin-left: 220px;
       }
-      /* Like Button */
+
       .like-icon {
-        font-size: 24px;
+        font-size: 20px;
         cursor: pointer;
         transition: transform 0.3s ease;
         margin-right: 5px;
       }
+
       .like-icon:hover {
         transform: scale(1.2);
       }
-      /* Comment Section */
+
       .comment-section {
-        padding: 20px;
-        border-top: 1px solid #eee;
+        padding: 10px;
+        border-top: 1px solid #e0e0e0;
       }
+
       .comment-section h4 {
         margin-top: 0;
-        margin-bottom: 15px;
-        font-size: 20px;
+        margin-bottom: 5px;
+        font-size: 0.9em;
         color: #333;
       }
+
       .comment-section form {
-        margin-bottom: 20px;
+        margin-bottom: 5px;
       }
+
       .comment-section textarea {
         width: 100%;
-        padding: 10px;
+        padding: 5px;
         border: 1px solid #ddd;
         border-radius: 4px;
         resize: vertical;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+        font-size: 0.8em;
       }
+
       .comment-section button {
-        background-color: #007bff;
-        color: #fff;
+        background-color: #4942e4;
+        color: #ffffff;
         border: none;
-        padding: 10px 20px;
+        padding: 6px 12px;
         border-radius: 4px;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        font-size: 0.9em;
       }
+
       .comment-section button:hover {
         background-color: #0056b3;
       }
+
       .comments {
-        margin-top: 15px;
+        margin-top: 5px;
       }
+
       .comment {
-        margin-bottom: 15px;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 15px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 5px;
+        font-size: 0.8em;
+        color: #555;
       }
     </style>
     {% endblock %}
@@ -180,7 +222,9 @@
   </head>
   <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom">
-      <a class="navbar-brand" href="{% url 'posts' %}" id="home-link">Title</a>
+      <a class="navbar-brand" href="{% url 'posts' %}" id="home-link"
+        >Blogging Platform</a
+      >
       <button
         class="navbar-toggler"
         type="button"
@@ -225,9 +269,8 @@
       <nav id="sidebar" class="sidebar">
         <ul class="list-unstyled components">
           <li>
-            <h2>Title</h2>
-            <p>ligne</p>
-          </li>
+            <h3 style="font-size : 1.2em">Blogging Platform</h3>
+          </li><br/>
           <li>
             <a href="{% url 'posts' %}" id="home-linkk">HomePages</a>
           </li>
@@ -308,10 +351,7 @@
                 {% for comment in post.comments.all %}
                 <div class="comment">
                   <p>{{ comment.content }}</p>
-                  <small
-                    >Posted by {{ comment.user }} on {{ comment.created_at
-                    }}</small
-                  >
+                  <small>Posted by {{ comment.user }} </small>
                 </div>
                 {% empty %}
                 <p>No comments yet.</p>
