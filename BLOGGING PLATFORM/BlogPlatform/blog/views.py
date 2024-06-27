@@ -61,6 +61,12 @@ def add_comment(request):
         Comment.objects.create(post=post, user=request.user, content=content)
     return redirect('home')
 
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from .forms import PostForm
+from .models import Post
+
 @login_required
 def managepost(request):
     if request.method == 'POST':
@@ -74,8 +80,11 @@ def managepost(request):
         else:
             messages.error(request, 'Failed to create the Post.')
     else:
-        form = PostForm(initial={'creator': request.user})  
-    return render(request, 'blog/newpost.html', {'form': form})
+        form = PostForm(initial={'creator': request.user})
+    
+    posts = Post.objects.all() 
+    context = {'form': form, 'posts': posts}
+    return render(request, 'blog/newpost.html', context)
 
 def posts(request):
     posts = Post.objects.all()

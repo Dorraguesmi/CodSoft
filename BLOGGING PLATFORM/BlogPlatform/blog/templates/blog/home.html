@@ -16,6 +16,10 @@
       media="screen"
       href="{% static 'css/base.css' %}"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     {% block styles %}
     <style>
       .navbar-custom {
@@ -126,12 +130,12 @@
       .card-actions a {
         margin-left: 5px;
         font-size: 0.9em;
-        color: #4942e4; /* Change default color */
+        color: #4942e4; 
         transition: color 0.3s;
       }
 
       .card-actions a:hover {
-        color: #0056b3; /* Change hover color */
+        color: #0056b3; 
       }
 
       .container > div {
@@ -155,6 +159,7 @@
         cursor: pointer;
         transition: transform 0.3s ease;
         margin-right: 5px;
+        color: black; /* Set the like icon color to black */
       }
 
       .like-icon:hover {
@@ -213,6 +218,29 @@
         font-size: 0.8em;
         color: #555;
       }
+
+      .social-icons {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 250px;
+        padding-bottom: 20px;
+      }
+
+      .social-icons li {
+        margin: 0 10px;
+      }
+
+      .social-icons li a {
+        color: #ffffff;
+        font-size: 1.5em;
+        transition: color 0.3s;
+      }
+
+      .social-icons li a:hover {
+        color: #2e3a46;
+      }
     </style>
     {% endblock %}
     <link
@@ -269,18 +297,37 @@
       <nav id="sidebar" class="sidebar">
         <ul class="list-unstyled components">
           <li>
-            <h3 style="font-size : 1.2em">Blogging Platform</h3>
-          </li><br/>
+            <h3 style="font-size: 1.2em">Blogging Platform</h3>
+          </li>
+          <br />
           <li>
             <a href="{% url 'posts' %}" id="home-linkk">HomePages</a>
           </li>
           <li>
             <a href="#" id="internship">Blog</a>
           </li>
-          <li><a href="#" id="event">Posts</a></li>
-          <li><a href="#" id="housing">Pages</a></li>
+          <li>
+            <a href="#" id="event">Posts</a>
+          </li>
+          <li>
+            <a href="#" id="housing">Pages</a>
+          </li>
           <li>
             <a href="#" id="transport">Contact Us</a>
+          </li>
+        </ul>
+        <ul class="social-icons">
+          <li>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </li>
         </ul>
       </nav>
