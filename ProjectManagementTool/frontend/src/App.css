@@ -1,0 +1,252 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Base styles */
+body {
+  background-color: #f4f7fc;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  color: #6200ea;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+/* Form styles */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #6200ea;
+  outline: none;
+}
+
+form textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+form button {
+  grid-column: span 2;
+  padding: 15px;
+  border: none;
+  background-color: #6200ea;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+form button:hover {
+  background-color: #3700b3;
+}
+
+/* Card styles */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.card h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #6200ea;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Grid styles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #6200ea;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #3700b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.8rem;
+  }
+
+  .header p {
+    font-size: 1.3rem;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form button {
+    grid-column: span 1;
+  }
+}
+
+/* Specific form container styles */
+.form-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+}
+
+.form-container label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  color: #333;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="date"]:focus,
+.form-container textarea:focus {
+  border-color: #6200ea;
+  outline: none;
+}
+
+.form-container button {
+  background-color: #03dac5;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.form-container button:hover {
+  background-color: #018786;
+}
+
+/* Project and Task List styles */
+.project-list,
+.task-list {
+  margin-top: 30px;
+}
+
+.project-list h2,
+.task-list h2 {
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  color: #6200ea;
+  font-weight: 600;
+}
+
+.project-list ul,
+.task-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-list li,
+.task-list li {
+  background: #ffffff;
+  border: 2px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.project-list li:hover,
+.task-list li:hover {
+  background-color: #e8eaf6;
+}
