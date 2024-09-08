@@ -19,6 +19,29 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/* Navbar styles */
+.navbar {
+  background-color: #6200ea;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #bb86fc;
+}
+
 /* Container styles */
 .container {
   max-width: 1200px;
@@ -183,7 +206,8 @@ form button:hover {
 }
 
 .form-container input[type="text"],
-.form-container input[type="date"],
+.form-container input[type="email"],
+.form-container input[type="password"],
 .form-container textarea {
   width: 100%;
   padding: 15px;
@@ -194,8 +218,7 @@ form button:hover {
   transition: border-color 0.3s;
 }
 
-.form-container input[type="text"]:focus,
-.form-container input[type="date"]:focus,
+.form-container input:focus,
 .form-container textarea:focus {
   border-color: #6200ea;
   outline: none;
